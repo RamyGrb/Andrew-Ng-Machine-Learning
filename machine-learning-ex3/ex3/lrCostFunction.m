@@ -36,15 +36,10 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-J= (1/m)*( (-y).*log(X*theta) - (1-y).*log(1-X*theta) ) + (lambda/m)*transpose(theta)*theta;
-grad= grad - (1/m)* transpose(X) * (X*theta-y) - (lambda/m)*theta;
-
-
-
-
-
-
-
+J= (1/m)*( (-y')*log(X*theta) - (1-y)'.*log(1-X*theta) ) + (lambda/m)*transpose(theta)*theta;
+theta_new=theta
+theta_new(1)=0
+grad= (1/m)* transpose(X) * (X*theta-y) + (lambda/m)*temp;
 
 % =============================================================
 
