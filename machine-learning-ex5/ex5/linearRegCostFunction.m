@@ -21,8 +21,11 @@ grad = zeros(size(theta));
 
 J = (1/(2*m)) * sum((X*theta - y).^2) + (lambda/(2*m));
 
+for j = 2:size(theta)
+  grad(j) = (1/m) * (X*theta - y) .* X(:,j) + (lambda/m)*theta(j);
+end
 
-
+grad(1) = (1/m) * (X*theta - y) .* X(:,1)
 
 
 
