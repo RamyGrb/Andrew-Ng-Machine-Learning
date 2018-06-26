@@ -29,7 +29,6 @@ for k=1:K
 
   centroids(k,:) = mean(X(idx==k,:));
 
-  end
 end
 
 
