@@ -42,6 +42,8 @@ Theta_grad = zeros(size(Theta));
 
 J = (1/2) * sum(sum( R .* (( X * Theta' - Y ).^2) ));
 
+J = J + (lambda/2) * ( sum(sum(X.^2)) + sum(sum(Theta.^2)) );
+
 for i = 1:num_movies
 	idx = find(R(i,:) == 1);
 	theta_tmp = Theta(idx,:);
