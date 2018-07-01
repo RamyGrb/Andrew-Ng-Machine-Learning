@@ -22,10 +22,8 @@ sigma2 = zeros(n, 1);
 %
 
 mu = (1/m) * sum(X) ;
+sigma2 = var(X, 1, 1);
 
-for i=1:n
-  sigma2(i) = (1/m) * sum( (X(i,1) - mu(i)).^2 )
-end
 
 
 
